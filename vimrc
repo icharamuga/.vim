@@ -51,6 +51,13 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+
+"---------------------------------------
+"              My Settings
+"---------------------------------------
+
+set number
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -94,6 +101,9 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'jacoborus/tender.vim'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
