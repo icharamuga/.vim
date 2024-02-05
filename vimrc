@@ -58,59 +58,30 @@ endif
 
 set number
 
-call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
+"---------------------------------------
+"            Vundle Settings
+"---------------------------------------
 
-" Make sure you use single quotes
+filetype off
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plugin 'VundleVim/Vundle.vim'
 
-" Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-" Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-default branch
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-"Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-"Plug '~/my-prototype-plugin'
-
-Plug 'tomasiser/vim-code-dark'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'jacoborus/tender.vim'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'jacoborus/tender.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'mattn/vim-lsp-settings'
+Plugin 'ycm-core/YouCompleteMe'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
-call plug#end()
-" You can revert the settings after the call like so:
-"   filetype indent off   " Disable file-type-specific indentation
-"   syntax off            " Disable syntax highlighting
+call vundle#end()
+filetype plugin indent on
 
 " Colorscheme
 colorscheme tender
@@ -120,7 +91,7 @@ augroup lsp
   autocmd!
 
   " Automatically start LSP when opening a supported file type
-  autocmd FileType java,typescript,lua,python,lua lua require'nvim_lsp'.pyright.setup{}
+  " autocmd FileType java,typescript,lua,python,lua lua require'nvim_lsp'.pyright.setup{}
 
   " Keybindings for common LSP actions
   nnoremap gd <cmd>:LspDefinition<CR>
