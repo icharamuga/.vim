@@ -140,3 +140,6 @@ augroup lsp
   " Format code
 augroup END
 
+
+nnoremap <silent> <localleader>h <Plug>(YCMToggleInlayHints)
+let g:ycm_confirm_extra_conf = 0
