@@ -114,3 +114,58 @@ call plug#end()
 
 " Colorscheme
 colorscheme tender
+
+" Configure vim-lsp
+augroup lsp
+  autocmd!
+
+  " Automatically start LSP when opening a supported file type
+  autocmd FileType java,typescript,lua,python,lua lua require'nvim_lsp'.pyright.setup{}
+
+  " Keybindings for common LSP actions
+  nnoremap gd <cmd>:LspDefinition<CR>
+  " Go to definition
+
+  nnoremap K <cmd>:LspHover<CR>
+  " Show hover information
+
+  nnoremap <C-k> <cmd><CR>
+  " Show signature help
+
+  " nnoremap <leader>wa <cmd><CR>
+  " Add workspace folder
+
+  " nnoremap <leader>wr <cmd><CR>
+  " Remove workspace folder
+
+  " nnoremap <leader>wl <cmd><CR>
+  " List workspace folders
+
+  nnoremap gD <cmd>:LspDeclaration<CR>
+  " Go to type definition
+
+  nnoremap <leader>rn <cmd>:LspRename<CR>
+  " Rename symbol
+
+  nnoremap <c-@> <cmd>:LspCodeAction<CR>
+  " Code action
+
+  nnoremap gr <cmd>:LspReferences<CR>
+  " Find references
+
+  " nnoremap <leader>e <cmd><CR>
+  " Show line diagnostics
+
+  " nnoremap [d <cmd><CR>
+  " Go to previous diagnostic
+
+  " nnoremap ]d <cmd><CR>
+  " Go to next diagnostic
+
+  " nnoremap <leader>q <cmd><CR>
+  " Set loclist for diagnostics
+
+  " nnoremap <leader>f <cmd><CR>
+  " Format code
+augroup END
+
