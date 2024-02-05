@@ -141,5 +141,5 @@ augroup lsp
 augroup END
 
 
-nnoremap <silent> <localleader>h <Plug>(YCMToggleInlayHints)
+nnoremap <silent> <leader>h <Plug>(YCMToggleInlayHints)
 let g:ycm_confirm_extra_conf = 0
