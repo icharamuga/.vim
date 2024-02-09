@@ -152,3 +152,11 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
+
+" Tab bindings
+nnoremap <leader>t :tabnew
+nnoremap H :tabp
+nnoremap L :tabn
+
+" Disable swapfile
+set noswapfile
