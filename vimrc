@@ -1,3 +1,6 @@
+" Get the current operating system
+
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -64,7 +67,9 @@ set number
 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/.vim/bundle/vundle
+let path='$HOME/.vim/bundle'
+call vundle#rc('$HOME/.vim/bundle')
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
